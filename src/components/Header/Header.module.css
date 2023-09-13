@@ -1,0 +1,35 @@
+.Header {
+    height: 50px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    border-bottom: 2px solid #DCDCDB;
+}
+
+.Header a {
+    text-decoration: none;
+    color: #050548;
+    margin: 0 20px;
+    font-weight: bold;
+}
+
+.Header a[class='active'] {
+    color: orange;
+    font-weight: bold;
+}
+
+.logo {
+    width: 220px;
+    height: 40px;
+    margin: 0 10px;
+    background-image: url("../../assets/images/logo.png");
+    background-size: contain;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.nav {
+    margin: 0 20px;
+}
