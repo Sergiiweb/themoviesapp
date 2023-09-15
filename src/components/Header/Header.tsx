@@ -1,6 +1,7 @@
 import {NavLink} from "react-router-dom";
 
 import css from './Header.module.css';
+import {UserInfo} from "../UserInfo";
 
 const Header = () => {
     return (
@@ -12,6 +13,9 @@ const Header = () => {
                 <NavLink to={'movies'}>Movies</NavLink>
                 <NavLink to={'genres'}>Genres</NavLink>
                 <NavLink to={'search'}>Search</NavLink>
+            </div>
+            <div>
+                <UserInfo/>
             </div>
         </div>
     );

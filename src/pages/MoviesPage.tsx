@@ -1,9 +1,10 @@
-import {Movies} from "../components";
+import {Movies, Pagination} from "../components";
 
 const MoviesPage = () => {
     return (
         <div>
             <Movies/>
+            <Pagination/>
         </div>
     );
 };

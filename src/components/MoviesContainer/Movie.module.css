@@ -6,8 +6,17 @@
     justify-content: space-around;
     border: 2px solid #DCDCDB;
     margin: 5px 10px;
+    cursor: pointer;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 3em;
+    font-size: 20px;
 }
 
 .Movie img {
-    width: 200px;
+    width: 208px;
 }

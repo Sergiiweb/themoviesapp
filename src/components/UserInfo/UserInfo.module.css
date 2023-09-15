@@ -1,0 +1,19 @@
+.UserInfo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Image {
+    width: 40px;
+    height: 40px;
+    background-image: url("../../assets/images/avatar.jpg");
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.Name {
+    font-size: 14px;
+    margin: 5px;
+    max-width: 60px;
+}
