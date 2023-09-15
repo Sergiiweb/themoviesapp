@@ -3,3 +3,4 @@ export * from "./MoviesContainer";
 export * from "./Pagination";
 export * from "./StarsRating";
 export * from "./UserInfo";
+export * from "./GenresContainer";
