@@ -1,5 +1,6 @@
-import {useAppDispatch, useAppSelector} from "../../hooks";
 import {useEffect} from "react";
+
+import {useAppDispatch, useAppSelector} from "../../hooks";
 import {genreActions} from "../../redux";
 import {GenreBadge} from "./GenreBadge";
 import css from "./Genres.module.css";

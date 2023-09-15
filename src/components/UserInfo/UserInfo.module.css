@@ -2,6 +2,11 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    cursor: pointer;
+}
+
+.UserInfo:hover {
+    box-shadow: -2px 2px 15px #86d5e6;
 }
 
 .Image {
