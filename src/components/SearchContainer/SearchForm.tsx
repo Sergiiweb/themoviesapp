@@ -18,8 +18,8 @@ const SearchForm = () => {
     return (
         <form onSubmit={handleSubmit(search)}>
             <div className={css.SearchForm}>
-                <input type="text" placeholder="search..." {...register('search')} required/>
-                <button>Search</button>
+                <input className={css.searchInput} type="text" placeholder="search..." {...register('search')} required/>
+                <button className={css.glowOnHover}>Search</button>
             </div>
         </form>
     );
