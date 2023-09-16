@@ -1,4 +1,3 @@
-import {Stack} from "@mui/material";
 import {Pagination as PaginationMUI} from '@mui/material';
 import {useSearchParams} from "react-router-dom";
 import * as React from "react";
@@ -20,14 +19,15 @@ const Pagination = () => {
     return (
         <div className={css.Pagination}>
             {total_pages &&
-                <Stack spacing={2}>
-                    <PaginationMUI
-                        count={total_pages}
-                        page={+query.get('page')}
-                        onChange={handleChange}
-                        variant="outlined"
-                        shape="rounded"/>
-                </Stack>
+                <PaginationMUI
+                    count={total_pages}
+                    page={+query.get('page')}
+                    onChange={handleChange}
+                    variant="outlined"
+                    color="primary"
+                    shape="rounded"
+                    className={css.pag}
+                />
             }
         </div>
     );

@@ -5,3 +5,4 @@ export * from "./StarsRating";
 export * from "./UserInfo";
 export * from "./GenresContainer";
 export * from "./SearchContainer";
+export * from "./SwitchTheme";

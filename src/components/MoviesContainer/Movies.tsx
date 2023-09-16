@@ -1,10 +1,10 @@
 import {useEffect} from "react";
+import {useSearchParams} from "react-router-dom";
 
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {Movie} from "./Movie";
 import {movieActions} from "../../redux";
 import css from "./Movies.module.css";
-import {useSearchParams} from "react-router-dom";
 
 const Movies = () => {
     const {movies} = useAppSelector(state => state.movies);

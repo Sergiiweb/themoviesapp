@@ -2,5 +2,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    margin: 20px 0 0 0;
+    padding: 10px 0;
+    border-top: 2px solid #AAB4BE;
+}
+
+.pag {
+    background-color: #AAB4BE;
+    padding: 3px 5px;
+    border-radius: 3px;
 }

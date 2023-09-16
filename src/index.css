@@ -8,6 +8,18 @@ body {
   box-sizing: border-box;
 }
 
+#dark {
+  background-color: #101418;
+  color: #f2f2f2;
+  transition: 1s;
+}
+
+#light {
+  background-color: #f2f2f2;
+  color: #101418;
+  transition: 1s;
+}
+
 /*code {*/
 /*  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',*/
 /*    monospace;*/

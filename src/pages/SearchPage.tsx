@@ -1,7 +1,11 @@
+import {Pagination, Search, SearchForm} from "../components";
+
 const SearchPage = () => {
     return (
         <div>
-            SearchPage
+            <SearchForm/>
+            <Search/>
+            <Pagination/>
         </div>
     );
 };

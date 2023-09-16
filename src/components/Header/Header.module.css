@@ -1,21 +1,32 @@
 .Header {
     height: 50px;
-    background-color: #FFFFFF;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 25px;
-    border-bottom: 2px solid #DCDCDB;
+    border-bottom: 2px solid #AAB4BE;
 }
 
-.Header a {
+#dark .Header {
+    background-color: #860d0d;
+    color: #f2f2f2;
+}
+
+.HeaderLinks a {
     text-decoration: none;
-    color: #050548;
+    color: #AAB4BE;
     margin: 0 20px;
     font-weight: bold;
+    transition: 0.5s;
+    text-shadow: 1px 1px 2px #f2f2f2;
 }
 
-.Header a[class='active'] {
+.HeaderLinks a:hover {
+    color: #f6b640;
+    text-shadow: 1px 1px 2px #a9761a;
+}
+
+.HeaderLinks a[class='active'] {
     color: orange;
     font-weight: bold;
 }
@@ -28,8 +39,25 @@
     background-size: contain;
     padding: 5px;
     border-radius: 5px;
+    transition: 2s;
+}
+
+.logoLight {
+    width: 220px;
+    height: 40px;
+    margin: 0 10px;
+    background-image: url("../../assets/images/logo_grey.png");
+    background-size: contain;
+    padding: 5px;
+    border-radius: 5px;
+    transition: 2s;
 }
 
 .nav {
     margin: 0 20px;
+}
+
+.switchInfo {
+    display: flex;
+    justify-content: space-between;
 }

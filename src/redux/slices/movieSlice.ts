@@ -20,7 +20,7 @@ const initialState: IState = {
     error: null
 }
 
-const getAll = createAsyncThunk<IMoviesList, {page: number}>(
+const getAll = createAsyncThunk<IMoviesList, { page: number }>(
     'movieSlice/getAll',
     async ({page}, {rejectWithValue}) => {
         try {
@@ -33,7 +33,7 @@ const getAll = createAsyncThunk<IMoviesList, {page: number}>(
     }
 )
 
-const getById = createAsyncThunk<IMovieDetails, {id:number}>(
+const getById = createAsyncThunk<IMovieDetails, { id: number }>(
     'movieSlice/getById',
     async ({id}, {rejectWithValue}) => {
         try {
@@ -46,11 +46,23 @@ const getById = createAsyncThunk<IMovieDetails, {id:number}>(
     }
 )
 
-const getByGenre = createAsyncThunk<IMoviesList, {page: number, with_genres:number}>(
+const getByGenre = createAsyncThunk<IMoviesList, { page: number, with_genres: number }>(
     'movieSlice/getByGenre',
     async ({page, with_genres}, {rejectWithValue}) => {
         try {
             const {data} = await movieService.getByGenre(page, with_genres);
+            return data;
+        } catch (e) {
+            const err = e as AxiosError;
+            return rejectWithValue(err.response.data);
+        }
+    }
+)
+const getBySearchKeyword = createAsyncThunk<IMoviesList, { page: number, query: string }>(
+    'movieSlice/getBySearchKeyword',
+    async ({page, query}, {rejectWithValue}) => {
+        try {
+            const {data} = await movieService.searchByKeyword(page, query);
             return data;
         } catch (e) {
             const err = e as AxiosError;
@@ -81,6 +93,13 @@ const movieSlice = createSlice({
             state.movie = null;
             state.error = null;
         })
+        .addCase(getBySearchKeyword.fulfilled, (state, action) => {
+            state.movies = action.payload.results;
+            state.page = action.payload.page;
+            state.total_pages = action.payload.total_pages;
+            state.movie = null;
+            state.error = null;
+        })
         .addMatcher(isRejected, (state, action) => {
             state.error = action.payload
         })
@@ -92,7 +111,8 @@ const movieActions = {
     ...actions,
     getAll,
     getById,
-    getByGenre
+    getByGenre,
+    getBySearchKeyword
 }
 
 export {
