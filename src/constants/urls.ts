@@ -5,6 +5,7 @@ const movies = '/discover/movie';
 const posterBaseUrl = 'https://image.tmdb.org/t/p/w500';
 const movie = '/movie';
 const genres = '/genre/movie/list';
+const search = '/search/keyword';
 
 const urls = {
     movies: {
