@@ -13,6 +13,7 @@
 .ratingBody::before {
     content: "★★★★★★★★★★";
     display: block;
+    transform: translate(0,-2px);
 }
 
 .ratingActive {
@@ -32,6 +33,7 @@
     top: 0;
     left: 0;
     color: #ffd300;
+    transform: translate(0,-2px);
 }
 
 .ratingItems {
@@ -54,4 +56,5 @@
     font-size: 50%;
     line-height: 1;
     padding-left: 10px;
+    transform: translate(0,-2px);
 }

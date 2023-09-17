@@ -52,9 +52,9 @@ const MoviesListCard = () => {
                                     }
                                 </div>
                             </div>
-                            <div>Release date: {movie.release_date}</div>
-                            <div>Budget: {movie.budget}</div>
-                            <div>Duration: {movie.runtime} min</div>
+                            <div className={css.infoDiv}>Release date: {movie.release_date}</div>
+                            <div className={css.infoDiv}>Budget: {movie.budget}</div>
+                            <div className={css.infoDiv}>Duration: {movie.runtime} min</div>
                             {movie.homepage &&
                                 <div className={css.homepageLink}><Link to={movie.homepage}>Homepage</Link></div>
                             }

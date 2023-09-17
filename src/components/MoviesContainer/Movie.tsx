@@ -18,7 +18,7 @@ const Movie: FC<IProps> = ({movie}) => {
     return (
         <div className={css.Movie} onClick={() => navigate(`/movies/${id.toString()}`)}>
             <PosterPreview poster_path={poster_path} title={title}/>
-            <div className={css.title}>{title}</div>
+            <div className={css.title} title={title}>{title}</div>
             <StarsRating vote_average={vote_average}/>
         </div>
     );
