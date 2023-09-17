@@ -51,19 +51,19 @@ const MaterialUISwitch = styled(Switch)(({theme}) => ({
     },
 }));
 const SwitchTheme = () => {
-    let {currentTheme} = useAppSelector(state => state.theme);
+    const {currentTheme} = useAppSelector(state => state.theme);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
         if (localStorage.getItem('theme')) {
             dispatch(themeActions.setTheme(localStorage.getItem('theme')));
         }
-    }, []);
+    }, [currentTheme]);
 
     const handleChange = () => {
         dispatch(themeActions.setTheme(currentTheme === 'dark' ? 'light' : 'dark'));
+        localStorage.setItem('theme', (currentTheme === 'dark' ? 'light' : 'dark'));
     };
-    localStorage.setItem('theme', currentTheme);
 
     return (
         <div>
@@ -71,8 +71,9 @@ const SwitchTheme = () => {
                 label={currentTheme === 'light' ? 'Light Mode' : 'Dark Mode'}
                 control={<MaterialUISwitch
                     sx={{m: 1}}
-                    defaultChecked
+                    checked={currentTheme === 'dark'}
                     onChange={handleChange}
+                    inputProps={{'aria-label': 'controlled'}}
                 />}
             />
         </div>
