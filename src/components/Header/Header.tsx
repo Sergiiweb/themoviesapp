@@ -40,7 +40,7 @@ const Header = () => {
                         <LinearProgress color="inherit"/>
                     </Box>)
                     :
-                    <div style={{width: '100%', height:'5px'}}></div>
+                    <div style={{width: '100%', height: '5px'}}></div>
                 }
             </div>
         </>

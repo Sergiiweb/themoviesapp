@@ -9,10 +9,10 @@ import css from "./Movies.module.css";
 const Movies = () => {
     const {movies} = useAppSelector(state => state.movies);
     const dispatch = useAppDispatch();
-    const [query, setQuery] = useSearchParams({page:'1'});
+    const [query,] = useSearchParams({page: '1'});
 
     useEffect(() => {
-            dispatch(movieActions.getAll({page:+query.get('page')}));
+        dispatch(movieActions.getAll({page: +query.get('page')}));
     }, [query.get('page')]);
 
     return (

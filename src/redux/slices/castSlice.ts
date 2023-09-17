@@ -1,6 +1,7 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {AxiosError} from "axios";
+
 import {IActor, IMovieCast} from "../../interfaces";
-import {AxiosError} from "axios/index";
 import {movieService} from "../../services";
 import {movieActions} from "./movieSlice";
 

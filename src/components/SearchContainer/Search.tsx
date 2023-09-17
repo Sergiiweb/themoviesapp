@@ -15,7 +15,7 @@ const Search = () => {
         if (query.get('query')) {
             dispatch(movieActions.getBySearchKeyword({page: +query.get('page'), query: query.get('query')}))
         } else {
-            dispatch(movieActions.getAll({page:+query.get('page')}));
+            dispatch(movieActions.getAll({page: +query.get('page')}));
         }
     }, [query.get('page'), query.get('query')]);
 

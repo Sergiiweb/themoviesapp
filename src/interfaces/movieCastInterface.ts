@@ -14,6 +14,6 @@ export interface IActor {
 }
 
 export interface IMovieCast {
-    id:number;
+    id: number;
     cast: IActor[];
 }

@@ -3,7 +3,7 @@ import {urls} from "../constants";
 import {IGenreList} from "../interfaces";
 
 const genresService = {
-    getAll: ():IRes<IGenreList> => apiService.get(urls.genres)
+    getAll: (): IRes<IGenreList> => apiService.get(urls.genres)
 }
 
 export {

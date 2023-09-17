@@ -11,10 +11,10 @@ interface IProps {
 const CastActor: FC<IProps> = ({actor}) => {
     return (
         <div className={css.CastActor} title={`Character: ${actor.character}`}>
-                <div className={css.poster}>
-                    <PosterPreview poster_path={actor.profile_path} title={actor.character}/>
-                </div>
-                <div className={css.name}>{actor.name}</div>
+            <div className={css.poster}>
+                <PosterPreview poster_path={actor.profile_path} title={actor.character}/>
+            </div>
+            <div className={css.name}>{actor.name}</div>
         </div>
     );
 };

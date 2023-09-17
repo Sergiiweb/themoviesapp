@@ -1,7 +1,8 @@
 import {FormControlLabel, styled, Switch} from "@mui/material";
+import {useEffect} from "react";
+
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {themeActions} from "../../redux";
-import {useEffect} from "react";
 
 const MaterialUISwitch = styled(Switch)(({theme}) => ({
     width: 62,
@@ -54,7 +55,7 @@ const SwitchTheme = () => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        if (localStorage.getItem('theme')){
+        if (localStorage.getItem('theme')) {
             dispatch(themeActions.setTheme(localStorage.getItem('theme')));
         }
     }, []);

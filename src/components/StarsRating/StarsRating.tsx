@@ -6,7 +6,7 @@ interface IProps {
     vote_average: number;
 }
 
-const StarsRating:FC<IProps> = ({vote_average}) => {
+const StarsRating: FC<IProps> = ({vote_average}) => {
     const ratingWidth = vote_average / 0.1;
 
     return (

@@ -44,9 +44,10 @@
 .starsRating {
     transform: scale(2, 2);
     margin-bottom: 10px;
+    transition: 1s;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 680px) {
     .starsRating {
         transform: scale(1.2, 1.2);
     }
@@ -58,7 +59,7 @@
     align-items: center;
 }
 
-.genresList{
+.genresList {
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
@@ -73,6 +74,6 @@
     margin: 5px 20px;
 }
 
-.homepageLink  a{
+.homepageLink a {
     text-decoration: none;
 }

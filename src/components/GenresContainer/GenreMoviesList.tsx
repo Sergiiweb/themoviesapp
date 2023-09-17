@@ -11,7 +11,7 @@ const GenreMoviesList = () => {
     const {movies} = useAppSelector(state => state.movies);
     const {currentGenre} = useAppSelector(state => state.genres);
     const dispatch = useAppDispatch();
-    const [query, setQuery] = useSearchParams({page: '1'});
+    const [query,] = useSearchParams({page: '1'});
 
     useEffect(() => {
         dispatch(movieActions.getByGenre({page: +query.get('page'), with_genres: +id}));

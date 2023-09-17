@@ -7,8 +7,8 @@ import {genreActions, movieActions} from "../../redux";
 import {PosterPreview} from "./PosterPreview";
 import {StarsRating} from "../StarsRating";
 import {IGenre} from "../../interfaces";
+import {CastList} from "../CastContainer";
 import css from "./MoviesListCard.module.css";
-import {CastList} from "../CastContainer/CastList";
 
 const MoviesListCard = () => {
     const {id} = useParams();

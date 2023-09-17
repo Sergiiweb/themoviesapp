@@ -54,11 +54,12 @@
     transition: 2s;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
     .logo {
         width: 160px;
         height: 26px;
     }
+
     .logoLight {
         width: 160px;
         height: 26px;

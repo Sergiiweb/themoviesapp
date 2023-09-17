@@ -2,9 +2,9 @@ import {FC} from "react";
 import {useNavigate} from "react-router-dom";
 
 import {IMovie} from "../../interfaces";
-import css from "./Movie.module.css";
 import {PosterPreview} from "./PosterPreview";
 import {StarsRating} from "../StarsRating";
+import css from "./Movie.module.css";
 
 interface IProps {
     movie: IMovie;
