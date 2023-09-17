@@ -22,7 +22,7 @@ const CastList = () => {
                     <h3 className="title">Actors:</h3>
                     <div className={css.CastList}>
                         {cast &&
-                            cast.map(actor => <CastActor actor={actor} key={actor.id}/>)
+                            cast.map(actor => (actor.profile_path && <CastActor actor={actor} key={actor.id}/>))
                         }
                     </div>
                 </div>
