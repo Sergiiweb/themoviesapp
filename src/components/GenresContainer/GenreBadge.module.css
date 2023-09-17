@@ -1,5 +1,5 @@
 .Badge {
-    width: 180px;
+    width: 170px;
     height: 40px;
     font-size: 24px;
     border-radius: 10px;
@@ -7,14 +7,14 @@
     justify-content: center;
     align-items: center;
     background-color: #c5e6e6;
-    margin: 10px 5px;
+    margin: 10px 10px;
     color: #050548;
     font-weight: bold;
     cursor: pointer;
     box-shadow: -3px 3px 10px #a9eded, 3px -3px 10px #a9eded;
     text-shadow: 1px 1px 2px #2525d1;
     opacity: 0.8;
-    transition: 0.5s;
+    transition: 2s;
 }
 
 .Badge:hover, .Badge:active {
@@ -23,12 +23,15 @@
     font-weight: bold;
     box-shadow: -5px 5px 20px #a0ecec, 5px -5px 20px #a0ecec;
     opacity: 1;
+    transition: 2s;
 }
 
 .BadgeActive {
-    width: 210px;
-    height: 50px;
-    font-size: 30px;
+    width: 170px;
+    height: 40px;
+    transform: scale(1.2, 1.2);
+    transition: 2s;
+    font-size: 24px;
     border-radius: 10px;
     display: flex;
     justify-content: center;

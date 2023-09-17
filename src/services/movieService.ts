@@ -1,5 +1,5 @@
 import {apiService, IRes} from "./apiService";
-import {IMovieDetails, IMoviesList} from "../interfaces";
+import {IMovieCast, IMovieDetails, IMoviesList} from "../interfaces";
 import {urls} from "../constants";
 
 const movieService = {
@@ -7,13 +7,16 @@ const movieService = {
         return apiService.get(urls.movies.base, {params: {page}});
     },
     getById(id: number): IRes<IMovieDetails> {
-        return apiService.get(urls.movie.byId(id))
+        return apiService.get(urls.movie.byId(id));
     },
     getByGenre(page: number, with_genres: number): IRes<IMoviesList> {
-        return apiService.get(urls.movies.base, {params: {page, with_genres}})
+        return apiService.get(urls.movies.base, {params: {page, with_genres}});
     },
     searchByKeyword(page: number, query: string): IRes<IMoviesList> {
-        return apiService.get(urls.movies.search, {params: {query,page}})
+        return apiService.get(urls.movies.search, {params: {query, page}});
+    },
+    castById(id: number): IRes<IMovieCast> {
+        return apiService.get(urls.cast.byId(id));
     }
 }
 

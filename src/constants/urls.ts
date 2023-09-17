@@ -16,6 +16,9 @@ const urls = {
     genres,
     movie: {
         byId: (id: number): string => `${movie}/${id}`
+    },
+    cast: {
+        byId: (id: number): string => `${movie}/${id}/credits`
     }
 }
 

@@ -1,5 +1,5 @@
 .Header {
-    height: 50px;
+    min-height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,15 +7,16 @@
     border-bottom: 2px solid #AAB4BE;
 }
 
-#dark .Header {
-    background-color: #860d0d;
-    color: #f2f2f2;
+.HeaderLinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .HeaderLinks a {
     text-decoration: none;
     color: #AAB4BE;
-    margin: 0 20px;
+    margin: 0 5px;
     font-weight: bold;
     transition: 0.5s;
     text-shadow: 1px 1px 2px #f2f2f2;
@@ -53,6 +54,17 @@
     transition: 2s;
 }
 
+@media (max-width: 600px) {
+    .logo {
+        width: 160px;
+        height: 26px;
+    }
+    .logoLight {
+        width: 160px;
+        height: 26px;
+    }
+}
+
 .nav {
     margin: 0 20px;
 }
@@ -60,4 +72,6 @@
 .switchInfo {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
 }

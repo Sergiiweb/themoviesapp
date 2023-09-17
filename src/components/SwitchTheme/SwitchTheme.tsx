@@ -61,10 +61,8 @@ const SwitchTheme = () => {
 
     const handleChange = () => {
         dispatch(themeActions.setTheme(currentTheme === 'dark' ? 'light' : 'dark'));
-        console.log(currentTheme);
     };
     localStorage.setItem('theme', currentTheme);
-    console.log(currentTheme);
 
     return (
         <div>

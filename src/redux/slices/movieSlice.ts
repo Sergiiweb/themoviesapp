@@ -1,4 +1,4 @@
-import {createAsyncThunk, createSlice, isRejected} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, isPending, isRejected} from "@reduxjs/toolkit";
 import {AxiosError} from "axios";
 
 import {IMovie, IMovieDetails, IMoviesList} from "../../interfaces";
@@ -10,6 +10,7 @@ interface IState {
     page: number;
     total_pages: number;
     error: any;
+    isLoading: boolean;
 }
 
 const initialState: IState = {
@@ -17,7 +18,8 @@ const initialState: IState = {
     movie: null,
     page: null,
     total_pages: null,
-    error: null
+    error: null,
+    isLoading: null
 }
 
 const getAll = createAsyncThunk<IMoviesList, { page: number }>(
@@ -74,7 +76,11 @@ const getBySearchKeyword = createAsyncThunk<IMoviesList, { page: number, query: 
 const movieSlice = createSlice({
     name: 'movieSlice',
     initialState,
-    reducers: {},
+    reducers: {
+        setIsLoading: (state, action) => {
+            state.isLoading = action.payload;
+        }
+    },
     extraReducers: builder => builder
         .addCase(getAll.fulfilled, (state, action) => {
             state.movies = action.payload.results;
@@ -82,9 +88,11 @@ const movieSlice = createSlice({
             state.total_pages = action.payload.total_pages;
             state.movie = null;
             state.error = null;
+            state.isLoading = false;
         })
         .addCase(getById.fulfilled, (state, action) => {
             state.movie = action.payload;
+            state.isLoading = false;
         })
         .addCase(getByGenre.fulfilled, (state, action) => {
             state.movies = action.payload.results;
@@ -92,6 +100,7 @@ const movieSlice = createSlice({
             state.total_pages = action.payload.total_pages;
             state.movie = null;
             state.error = null;
+            state.isLoading = false;
         })
         .addCase(getBySearchKeyword.fulfilled, (state, action) => {
             state.movies = action.payload.results;
@@ -99,9 +108,14 @@ const movieSlice = createSlice({
             state.total_pages = action.payload.total_pages;
             state.movie = null;
             state.error = null;
+            state.isLoading = false;
         })
         .addMatcher(isRejected, (state, action) => {
             state.error = action.payload
+            state.isLoading = false;
+        })
+        .addMatcher(isPending, (state) => {
+            state.isLoading = true;
         })
 });
 

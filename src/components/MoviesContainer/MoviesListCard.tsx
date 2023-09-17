@@ -8,6 +8,7 @@ import {PosterPreview} from "./PosterPreview";
 import {StarsRating} from "../StarsRating";
 import {IGenre} from "../../interfaces";
 import css from "./MoviesListCard.module.css";
+import {CastList} from "../CastContainer/CastList";
 
 const MoviesListCard = () => {
     const {id} = useParams();
@@ -27,20 +28,41 @@ const MoviesListCard = () => {
     return (
         <>
             {movie &&
-                <div className={css.MoviesListCard}>
-                    <PosterPreview poster_path={movie.poster_path} title={movie.title}/>
-                    <div>{movie.title}</div>
-                    <div>{movie.overview}</div>
-                    <div>
-                        <div>Rating:</div>
-                        <div><StarsRating vote_average={movie.vote_average}/></div>
+                <div>
+                    <div className={css.MoviesListCard}>
+                        <div className={css.poster}>
+                            <PosterPreview poster_path={movie.poster_path} title={movie.title}/>
+                        </div>
+                        <div className={css.info}>
+                            <h1 className={css.title}>{movie.title}</h1>
+                            <p className={css.overview}>{movie.overview}</p>
+                            <div className={css.rating}>
+                                <h4>Rating:</h4>
+                                <div className={css.starsRating}><StarsRating vote_average={movie.vote_average}/></div>
+                            </div>
+                            <div className={css.genres}>
+                                <h4>Genres:</h4>
+                                <div className={css.genresList}>
+                                    {movie.genres.map(genre => <div className={css.chipWrap} key={genre.id}><Chip
+                                        className={css.genreChip}
+                                        color="primary"
+                                        label={genre.name}
+                                        onClick={() => setGenre(genre)}/>
+                                    </div>)
+                                    }
+                                </div>
+                            </div>
+                            <div>Release date: {movie.release_date}</div>
+                            <div>Budget: {movie.budget}</div>
+                            <div>Duration: {movie.runtime} min</div>
+                            {movie.homepage &&
+                                <div className={css.homepageLink}><Link to={movie.homepage}>Homepage</Link></div>
+                            }
+                        </div>
                     </div>
-                    <div>Genres: {movie.genres.map(genre => <Chip key={genre.id} color="primary" label={genre.name}
-                                                                  onClick={() => setGenre(genre)}/>)}</div>
-                    <div>Release date: {movie.release_date}</div>
-                    <div>Budget: {movie.budget}</div>
-                    <div>Duration: {movie.runtime} min</div>
-                    <div><Link to={movie.homepage}>Homepage</Link></div>
+                    <div>
+                        <CastList/>
+                    </div>
                 </div>
             }
         </>
