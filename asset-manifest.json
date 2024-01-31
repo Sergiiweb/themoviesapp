@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/themoviesapp/static/css/main.fd308f73.css",
-    "main.js": "/themoviesapp/static/js/main.af534ac6.js",
-    "static/media/noImg.png": "/themoviesapp/static/media/noImg.30048661de110838494a.png",
-    "static/media/avatar.jpg": "/themoviesapp/static/media/avatar.41a086ca6b24ab23a714.jpg",
-    "index.html": "/themoviesapp/index.html",
-    "main.fd308f73.css.map": "/themoviesapp/static/css/main.fd308f73.css.map",
-    "main.af534ac6.js.map": "/themoviesapp/static/js/main.af534ac6.js.map"
+    "main.css": "/themovieapp/static/css/main.98ae31e2.css",
+    "main.js": "/themovieapp/static/js/main.f90cad76.js",
+    "static/media/noImg.png": "/themovieapp/static/media/noImg.30048661de110838494a.png",
+    "static/media/avatar.jpg": "/themovieapp/static/media/avatar.41a086ca6b24ab23a714.jpg",
+    "index.html": "/themovieapp/index.html",
+    "main.98ae31e2.css.map": "/themovieapp/static/css/main.98ae31e2.css.map",
+    "main.f90cad76.js.map": "/themovieapp/static/js/main.f90cad76.js.map"
   },
   "entrypoints": [
-    "static/css/main.fd308f73.css",
-    "static/js/main.af534ac6.js"
+    "static/css/main.98ae31e2.css",
+    "static/js/main.f90cad76.js"
   ]
 }
